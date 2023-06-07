@@ -1,0 +1,18 @@
+def hackerlandRadioTransmitters(x, k):
+    x.sort()
+    count=0
+    n=len(x)
+    i=0
+    while i<n:
+        reach=x[i]+k
+        j=i+1
+        while j<n and x[j]<=reach:
+            j+=1
+        i=j-1
+        reach=x[i]+k
+        j=i+1
+        while j<n and x[j]<=reach:
+            j+=1
+        count+=1
+        i=j
+    return count
